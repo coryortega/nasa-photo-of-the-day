@@ -1,16 +1,29 @@
 import React from "react";
+import {
+  Card, CardText, CardBody,
+  CardTitle, CardSubtitle
+} from 'reactstrap';
 
 const NasaCard = props => {
   return (
-    <div className="photo">
-      <img className="image" alt="photo of the day" src={props.image} />
-      <h2>Title: {props.title}</h2>
-      <p>{props.explanation}</p>
-      <div className="bottom">
-        <p>Date: {props.date}</p>
-        <p>Service Version: {props.service_version}</p>
-      </div>
+    <div>
+      <Card>
+        <CardBody>
+          <CardTitle>{props.title}</CardTitle>
+          <CardSubtitle>{props.date}</CardSubtitle>
+        </CardBody>
+        <div className = "imgContainer">
+        <img className= "img" width="100%" src={props.image} alt="Card image cap" />
+        </div>
+        <CardBody>
+          <CardText>{props.explanation}</CardText>
+        </CardBody>
+      </Card>
     </div>
   );
 };
 export default NasaCard;
+
+
+
+
