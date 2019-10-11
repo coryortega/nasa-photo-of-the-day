@@ -1,76 +1,84 @@
-import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
+import React, { useState, useEffect } from 'react';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import styled from "styled-components";
 
 export const Button = styled.button`
-  width: 200px;
-  height: 100px;
-  background: ${props => (props.primary ? "black" : "white")};
-  color: ${props => (props.primary ? "white" : "black")};
-  border: 0;
-  margin: 5px 10px;
-  transition: 0.2s ease-in;
-  border: ${props =>
-    props.primary ? "6px solid black" : "2px solid white"};
-  &:hover {
-    background: ${props => (props.primary ? "#2a2223" : "#fff")};
-    color: ${props => (props.primary ? "#fff" : "#2a2223")};
-    border: ${props =>
-      props.primary ? "2px solid #2a2223" : "2px solid #99f3eb"};
-  }
+background: transparent;
+border-radius: 3px;
+border: 2px solid black;
+color: palevioletred;
+margin: 0 1em;
+padding: 0.25em 1em;
 `;
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
+function work(props) {
+    
+    return (
+        <nav>
+            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-09")}>2019-10-09</Button></a>
+            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-08")}>2019-10-08</Button></a>
+            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-07")}>2019-10-07</Button></a>
+            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-06")}>2019-10-06</Button></a>
+            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-05")}>2019-10-05</Button></a>
+            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-04")}>2019-10-04</Button></a>
+            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-03")}>2019-10-03</Button></a>
+        </nav>
+    )
+}
+export default work;
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
-  }
+// export default class work extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-  toggleNavbar() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
+//     this.toggleNavbar = this.toggleNavbar.bind(this);
+//     this.state = {
+//       collapsed: true
+//     };
+//   }
+
+//   toggleNavbar() {
+//     this.setState({
+//       collapsed: !this.state.collapsed
+//     });
+//   }
 
   
-  render(props) {
+//   render(props) {
 
-    return (
-      <div>
-        <Navbar color="faded" light>
-          <NavbarBrand href="/" className="mr-auto">Astronomy Photo of the Day!</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-              <NavItem>
-              <Button primary as="a" href="/" value="2019-10-09" onClick={() => props.select("2019-10-09")}>2019-10-09</Button>
-              </NavItem>
-              <NavItem>
-              <Button primary as="a" href="/">2019-10-08</Button>
-              </NavItem>
-              <NavItem>
-              <Button primary as="a" href="/">2019-10-07</Button>
-              </NavItem>
-              <NavItem>
-              <Button primary as="a" href="/">2019-10-06</Button>
-              </NavItem>
-              <NavItem>
-              <Button primary as="a" href="/">2019-10-05</Button>
-              </NavItem>
-              <NavItem>
-              <Button primary as="a" href="/">2019-10-04</Button>
-              </NavItem>
-              <NavItem>
-              <Button primary as="a" href="/">2019-10-03</Button>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-    );
-  }
-}
+//     return (
+//       <div>
+          
+//         <Navbar color="faded" light>
+//           <NavbarBrand href="/" className="mr-auto">Astronomy Photo of the Day!</NavbarBrand>
+//           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+//           <Collapse isOpen={!this.state.collapsed} navbar>
+//             <Nav navbar>
+//               <NavItem>
+//               <Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-09")}>2019-10-09</Button>
+//               </NavItem>
+//               <NavItem>
+//               <Button primary as="a" href="/" value="2019-10-08" >2019-10-08</Button>
+//               </NavItem>
+//               <NavItem>
+//               <Button primary as="a" href="/">2019-10-07</Button>
+//               </NavItem>
+//               <NavItem>
+//               <Button primary as="a" href="/">2019-10-06</Button>
+//               </NavItem>
+//               <NavItem>
+//               <Button primary as="a" href="/">2019-10-05</Button>
+//               </NavItem>
+//               <NavItem>
+//               <Button primary as="a" href="/">2019-10-04</Button>
+//               </NavItem>
+//               <NavItem>
+//               <Button primary as="a" href="/">2019-10-03</Button>
+//               </NavItem>
+//             </Nav>
+//           </Collapse>
+//         </Navbar>
+//       </div>
+//     );
+//   }
+// }

@@ -29,7 +29,7 @@ export default function PhotoList(props) {
     
     useEffect(() => {
       axios
-        .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${props.newSelect}`)
+        .get(`https://api.nasa.gov/planetary/apod?api_key=CvVO1AwxrsUYSuaNjHl0UesmQhvImZTvuLQqaGc7&date=${props.newSelect}`)
         .then(response => {
           console.log(response.data);
           setPhoto(response.data);
@@ -37,7 +37,7 @@ export default function PhotoList(props) {
         .catch(error => {
           console.log("the data was not return", error);
         });
-    }, []);
+    }, [props.newSelect]);
     return (
       <div className="APOD">
         <NasaCard

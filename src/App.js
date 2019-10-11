@@ -7,15 +7,17 @@ import Nav from "./Components/Nav";
 //   setDate(prop.select = value)
 // }
 
+
+
 function App(props) {
 
-  const [date, setDate] = useState("2019-10-10");
-
+  const [date, setDate] = useState(" ");
+console.log(setDate)
   return (
     <div className="App">
       <div className="contain">
-        <Nav select = {setDate}/>
-        <div className = "grid"><NasaGrid newSelect = {date}/></div>    
+        <div className = "divContain"><Nav select = {setDate}/></div>
+        <div className = "grid"><NasaGrid newSelect = {date}/></div>
       </div>
     </div>
   );

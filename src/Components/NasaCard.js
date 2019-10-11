@@ -9,8 +9,8 @@ const NasaCard = props => {
     <div>
       <Card>
         <CardBody>
-          <CardTitle>{props.title}</CardTitle>
-          <CardSubtitle>{props.date}</CardSubtitle>
+          <CardTitle><h2>{props.title}</h2></CardTitle>
+          <CardSubtitle>Date: {props.date}</CardSubtitle>
         </CardBody>
         <div className = "imgContainer">
         <img className= "img" width="100%" src={props.image} alt="Card image cap" />
