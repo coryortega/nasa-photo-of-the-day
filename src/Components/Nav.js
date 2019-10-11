@@ -11,21 +11,65 @@ margin: 0 1em;
 padding: 0.25em 1em;
 `;
 
-function work(props) {
+// function work(props) {
     
-    return (
-        <nav>
-            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-09")}>2019-10-09</Button></a>
-            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-08")}>2019-10-08</Button></a>
-            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-07")}>2019-10-07</Button></a>
-            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-06")}>2019-10-06</Button></a>
-            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-05")}>2019-10-05</Button></a>
-            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-04")}>2019-10-04</Button></a>
-            <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-03")}>2019-10-03</Button></a>
-        </nav>
-    )
-}
-export default work;
+//     return (
+//         <nav>
+//             <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-09")}>2019-10-09</Button></a>
+//             <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-08")}>2019-10-08</Button></a>
+//             <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-07")}>2019-10-07</Button></a>
+//             <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-06")}>2019-10-06</Button></a>
+//             <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-05")}>2019-10-05</Button></a>
+//             <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-04")}>2019-10-04</Button></a>
+//             <a><Button primary as="a" value="2019-10-09" onClick={() => props.select("2019-10-03")}>2019-10-03</Button></a>
+//         </nav>
+//     )
+// }
+// export default work;
+
+export default function Work (props){
+     
+    const [collapsed, setCollapsed] = useState(true)
+ 
+
+     const toggleNavbar=()=> {
+      setCollapsed(!collapsed)
+    };
+        return(
+            <div>
+                    <Navbar color="faded" light>
+                      <NavbarBrand href="/" className="mr-auto">Astronomy Photo of the Day!</NavbarBrand>
+                      <NavbarToggler onClick={() => toggleNavbar()} className="mr-2" />
+                      <Collapse isOpen={!collapsed} navbar>
+                        <Nav navbar>
+                          <NavItem>
+                          <Button primary as="a" href="#" value="2019-10-09" onClick={(e) => props.select("2019-10-09")}>2019-10-09</Button>
+                          </NavItem>
+                          <NavItem>
+                          <Button primary as="a" href="#" value="2019-10-08" onClick={(e) => props.select("2019-10-08")}>2019-10-08</Button>
+                          </NavItem>
+                          <NavItem>
+                          <Button primary as="a" href="#" onClick={(e) => props.select("2019-10-07")}>2019-10-07</Button>
+                          </NavItem>
+                          <NavItem>
+                          <Button primary as="a" href="#" onClick={(e) => props.select("2019-10-06")}>2019-10-06</Button>
+                          </NavItem>
+                          <NavItem>
+                          <Button primary as="a" href="#" onClick={(e) => props.select("2019-10-05")}>2019-10-05</Button>
+                          </NavItem>
+                          <NavItem>
+                          <Button primary as="a" href="#" onClick={(e) => props.select("2019-10-04")}>2019-10-04</Button>
+                          </NavItem>
+                          <NavItem>
+                          <Button primary as="a" href="#" onClick={(e) => props.select("2019-10-03")}>2019-10-03</Button>
+                          </NavItem>
+                        </Nav>
+                      </Collapse>
+                    </Navbar>
+                  </div>
+        )
+    } 
+
 
 // export default class work extends React.Component {
 //   constructor(props) {
@@ -44,7 +88,7 @@ export default work;
 //   }
 
   
-//   render(props) {
+//   render() {
 
 //     return (
 //       <div>
