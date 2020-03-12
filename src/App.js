@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+import NasaGrid from "./Components/NasaGrid";
+import Nav from "./Components/Nav";
 
-function App() {
+// const changeValue = () => {
+//   setDate(prop.select = value)
+// }
+
+
+
+function App(props) {
+
+  const [date, setDate] = useState(" ");
+console.log(setDate)
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <div className="contain">
+        <div className = "divContain"><Nav select = {setDate}/></div>
+        <div className = "grid"><NasaGrid newSelect = {date}/></div>
+      </div>
     </div>
   );
 }
